@@ -1,1 +1,25 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>satori</title><link href=/static/css/app.49de7c387320b87376271be33721f06d.css rel=stylesheet></head><body style="overflow-x:hidden; overflow-y:hidden"><div id=app></div><script type=text/javascript src=/static/js/manifest.1d059bab79f5a20ec9ba.js></script><script type=text/javascript src=/static/js/vendor.c9ad95ec4414be9753bb.js></script><script type=text/javascript src=/static/js/app.52737fb8cb8d5ce68ab1.js></script></body></html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | LeapsandBounds</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/game.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body>
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+        <div class="title">LeapsandBounds</div>
+      </div>
+    </div>
+  </body>
+</html>
