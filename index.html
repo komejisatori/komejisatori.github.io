@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Academic Homepage</title>
+    <title>Your Name | Academic Homepage</title>
     <meta
       name="description"
       content="A simple academic homepage for GitHub Pages."
@@ -18,148 +18,59 @@
   </head>
   <body>
     <div class="page-shell">
-      <header class="hero">
-        <nav class="topbar">
-          <a class="brand" href="#top">Your Name</a>
-          <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#research">Research</a>
-            <a href="#publications">Publications</a>
-            <a href="#contact">Contact</a>
-          </div>
+      <header class="topbar">
+        <a class="brand" href="#top" id="site-brand">Your Name</a>
+        <nav class="nav-links">
+          <a href="#biography" id="nav-biography">Biography</a>
+          <a href="#news" id="nav-news">News</a>
         </nav>
-
-        <section class="hero-content" id="top">
-          <div class="hero-copy">
-            <p class="eyebrow">Academic Homepage</p>
-            <h1>Researching ideas that connect technology, people, and knowledge.</h1>
-            <p class="lead">
-              I am a Ph.D. student / researcher at <strong>Your Institution</strong>.
-              My work focuses on <strong>your research area</strong>, with interests in
-              machine learning, human-centered computing, and scientific discovery.
-            </p>
-            <div class="hero-actions">
-              <a class="button primary" href="#publications">View Publications</a>
-              <a class="button secondary" href="mailto:your.email@example.com">Email Me</a>
-            </div>
-          </div>
-          <aside class="profile-card">
-            <div class="avatar">YN</div>
-            <h2>Your Name</h2>
-            <p>Ph.D. Student, Your Institution</p>
-            <ul>
-              <li>Research Area One</li>
-              <li>Research Area Two</li>
-              <li>Research Area Three</li>
-            </ul>
-          </aside>
-        </section>
       </header>
 
-      <main>
-        <section class="section two-column" id="about">
-          <div>
-            <p class="section-label">About</p>
-            <h2>Short professional biography</h2>
+      <main id="top">
+        <section class="intro-section" id="biography">
+          <div class="portrait-column">
+            <div class="portrait-frame">
+              <img
+                id="portrait-image"
+                class="portrait-image"
+                src="biography.png"
+                alt="Profile photo"
+              />
+            </div>
           </div>
-          <div class="content-card">
-            <p>
-              Write a concise self-introduction here. You can include your current
-              position, department, advisor, and broader research mission in 3-5
-              sentences. This template is intentionally simple so you can quickly
-              turn the repository into a personal academic site.
+
+          <div class="bio-column">
+            <p class="bio-role" id="person-role">
+              Ph.D. Student / Researcher, Your Institution
             </p>
-            <p>
-              You can also mention your current projects, collaborations, or what
-              kinds of students and researchers you hope to connect with.
-            </p>
+            <div class="bio-text" id="bio-text"></div>
+            <div class="bio-links" id="bio-links"></div>
           </div>
         </section>
 
-        <section class="section" id="research">
-          <p class="section-label">Research</p>
-          <h2>Current directions</h2>
-          <div class="grid">
-            <article class="content-card">
-              <h3>Topic One</h3>
-              <p>
-                Describe one active research direction, methodology, or problem
-                domain in a few lines.
-              </p>
-            </article>
-            <article class="content-card">
-              <h3>Topic Two</h3>
-              <p>
-                Add a second area here, such as a project cluster, technical
-                specialization, or interdisciplinary theme.
-              </p>
-            </article>
-            <article class="content-card">
-              <h3>Topic Three</h3>
-              <p>
-                Add a third area for balance. This can later become a dedicated
-                project or research page if needed.
-              </p>
-            </article>
+        <section class="news-section" id="news">
+          <div class="section-heading">
+            <p class="section-label" id="news-label">Recent News</p>
           </div>
+
+          <div class="news-list" id="news-list"></div>
         </section>
 
-        <section class="section" id="publications">
-          <p class="section-label">Publications</p>
-          <h2>Selected work</h2>
-          <div class="publication-list">
-            <article class="publication-item">
-              <span class="publication-year">2026</span>
-              <div>
-                <h3>Paper Title Goes Here</h3>
-                <p>Your Name, Coauthor A, Coauthor B</p>
-                <p><em>Conference or Journal Name</em></p>
-              </div>
-            </article>
-            <article class="publication-item">
-              <span class="publication-year">2025</span>
-              <div>
-                <h3>Another Paper Title</h3>
-                <p>Your Name, Coauthor C</p>
-                <p><em>Conference or Journal Name</em></p>
-              </div>
-            </article>
-            <article class="publication-item">
-              <span class="publication-year">2024</span>
-              <div>
-                <h3>Earlier Representative Work</h3>
-                <p>Your Name, Coauthor D, Coauthor E</p>
-                <p><em>Workshop / ArXiv / Journal Name</em></p>
-              </div>
-            </article>
+        <section class="publications-section" id="publications">
+          <div class="section-heading">
+            <p class="section-label" id="publications-label">Selected Publications</p>
           </div>
-        </section>
 
-        <section class="section contact-section" id="contact">
-          <p class="section-label">Contact</p>
-          <h2>Get in touch</h2>
-          <div class="contact-panel">
-            <p>
-              Email: <a href="mailto:your.email@example.com">your.email@example.com</a>
-            </p>
-            <p>Office: Building / Room, Your Institution</p>
-            <p>
-              Links:
-              <a href="https://github.com/your-github">GitHub</a>
-              <a href="https://scholar.google.com/">Google Scholar</a>
-              <a href="https://www.linkedin.com/">LinkedIn</a>
-            </p>
-          </div>
+          <div class="publication-list" id="publication-list"></div>
         </section>
       </main>
 
       <footer class="footer">
-        <p>
-          <span id="current-year"></span> Your Name. Built for GitHub Pages.
-        </p>
+        <p><span id="current-year"></span> <span id="footer-name">Your Name</span></p>
       </footer>
     </div>
 
+    <script src="content.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
