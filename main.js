@@ -20,16 +20,34 @@ const renderBio = (paragraphs = []) => {
   });
 };
 
+const getLinkIcon = (iconName) => {
+  const icons = {
+    email:
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3V5zm2 2v.4l7 5.25L19 7.4V7H5zm14 10V9.9l-7 5.25-7-5.25V17h14z"/></svg>',
+    github:
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.41-4.04-1.41-.55-1.38-1.33-1.75-1.33-1.75-1.09-.73.08-.72.08-.72 1.2.08 1.84 1.22 1.84 1.22 1.08 1.82 2.82 1.3 3.5.99.1-.76.42-1.3.76-1.59-2.67-.3-5.47-1.32-5.47-5.86 0-1.29.47-2.35 1.22-3.18-.12-.3-.53-1.5.12-3.13 0 0 1-.32 3.3 1.21a11.5 11.5 0 0 1 6 0c2.29-1.53 3.29-1.2 3.29-1.2.66 1.62.25 2.82.13 3.12.76.83 1.22 1.89 1.22 3.18 0 4.56-2.8 5.56-5.48 5.85.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.83.58A12 12 0 0 0 12 .5z"/></svg>',
+    scholar:
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zm-7 9.18V16l7 3.82L19 16v-3.82l-7 3.82-7-3.82z"/></svg>',
+    linkedin:
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.49 2.49 0 1 0 5 8.48 2.49 2.49 0 0 0 4.98 3.5zM3 9h4v12H3V9zm7 0h3.83v1.71h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.5 4.8 5.74V21h-4v-5.63c0-1.34-.03-3.07-1.97-3.07-1.97 0-2.27 1.45-2.27 2.97V21h-4V9z"/></svg>',
+  };
+
+  return icons[iconName] || "";
+};
+
 const renderLinks = (links = []) => {
-  const container = document.getElementById("bio-links");
+  const container = document.getElementById("portrait-socials");
   if (!container) return;
 
   container.innerHTML = "";
 
   links.forEach((link) => {
     const node = document.createElement("a");
+    node.className = "social-link";
     node.href = link.href;
-    node.textContent = link.label;
+    node.innerHTML = getLinkIcon(link.icon);
+    node.setAttribute("aria-label", link.label);
+    node.title = link.label;
     container.appendChild(node);
   });
 };
@@ -87,12 +105,10 @@ const renderPublications = (items = []) => {
 };
 
 const syncPortraitWidth = () => {
-  const introSection = document.querySelector(".intro-section");
   const portraitColumn = document.querySelector(".portrait-column");
-  const bioColumn = document.querySelector(".bio-column");
   const portraitFrame = document.querySelector(".portrait-frame");
 
-  if (!introSection || !portraitColumn || !bioColumn || !portraitFrame) return;
+  if (!portraitColumn || !portraitFrame) return;
 
   if (window.innerWidth <= 820) {
     portraitColumn.style.width = "";
@@ -101,25 +117,9 @@ const syncPortraitWidth = () => {
     return;
   }
 
-  const aspectRatio = siteContent?.photo?.aspectRatio || 1;
-  const bioHeight = bioColumn.offsetHeight;
-  const gap = 48;
-  const introWidth = introSection.clientWidth;
-  const maxPortraitWidth = Math.max(260, introWidth * 0.42);
-  const portraitWidth = Math.min(bioHeight * aspectRatio, maxPortraitWidth);
-  const textWidth = introWidth - portraitWidth - gap;
-
-  portraitFrame.style.height = `${bioHeight}px`;
-
-  if (textWidth < 360) {
-    const adjustedPortraitWidth = Math.max(260, introWidth - gap - 360);
-    portraitColumn.style.width = `${adjustedPortraitWidth}px`;
-    portraitColumn.style.flexBasis = `${adjustedPortraitWidth}px`;
-    return;
-  }
-
-  portraitColumn.style.width = `${portraitWidth}px`;
-  portraitColumn.style.flexBasis = `${portraitWidth}px`;
+  portraitColumn.style.width = "200px";
+  portraitColumn.style.flexBasis = "200px";
+  portraitFrame.style.height = "";
 };
 
 if (siteContent) {
@@ -128,7 +128,6 @@ if (siteContent) {
   setText("site-brand", siteContent.name);
   setText("nav-biography", siteContent.navigation.biography);
   setText("nav-news", siteContent.navigation.news);
-  setText("person-role", siteContent.role);
   setText("news-label", siteContent.sections.newsLabel);
   setText("publications-label", siteContent.sections.publicationsLabel);
   setText("footer-name", siteContent.name);
@@ -150,11 +149,3 @@ setText("current-year", String(new Date().getFullYear()));
 
 window.addEventListener("load", syncPortraitWidth);
 window.addEventListener("resize", syncPortraitWidth);
-
-const bioColumn = document.querySelector(".bio-column");
-if (bioColumn && typeof ResizeObserver !== "undefined") {
-  const observer = new ResizeObserver(() => {
-    syncPortraitWidth();
-  });
-  observer.observe(bioColumn);
-}

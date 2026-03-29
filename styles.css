@@ -60,14 +60,16 @@ a {
 
 .intro-section {
   display: flex;
-  gap: 48px;
+  gap: 96px;
   align-items: flex-start;
   padding: 56px 0 48px;
 }
 
 .portrait-column {
   display: flex;
-  flex: 0 0 320px;
+  flex-direction: column;
+  flex: 0 0 200px;
+  max-width: 200px;
   align-self: flex-start;
 }
 
@@ -81,10 +83,47 @@ a {
 
 .portrait-image {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: contain;
   object-position: center;
   display: block;
+}
+
+.portrait-socials {
+  margin: 14px 0 0;
+  display: flex;
+  width: 100%;
+  align-self: stretch;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 10px;
+}
+
+.social-link {
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-link:hover {
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.social-link svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.social-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 6px;
 }
 
 .section-label {
@@ -112,14 +151,9 @@ h2 {
   font-size: clamp(2rem, 4vw, 2.8rem);
 }
 
-.bio-role {
-  margin: 16px 0 0;
-  color: var(--muted);
-  font-size: 1.05rem;
-}
-
 .bio-text {
-  margin-top: 28px;
+  margin-top: 0;
+  text-align: justify;
 }
 
 .bio-text p,
@@ -136,18 +170,14 @@ h2 {
   margin-top: 16px;
 }
 
-.bio-links {
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-  margin-top: 28px;
-  padding-top: 20px;
-  border-top: 1px solid var(--line);
+.bio-text a {
+  color: #0b57d0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
-.bio-links a {
-  color: var(--accent);
-  font-weight: 700;
+.bio-text a:hover {
+  color: #0842a0;
 }
 
 .news-section {
@@ -215,16 +245,20 @@ h2 {
   }
 
   .portrait-column {
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    flex-basis: auto;
     max-width: 340px;
   }
 
   .portrait-frame {
-    aspect-ratio: 4 / 5;
     height: auto;
-    min-height: 0;
+  }
+
+  .portrait-socials {
+    width: 100%;
+    justify-content: space-between;
+    align-self: stretch;
   }
 }
 

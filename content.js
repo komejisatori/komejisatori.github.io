@@ -1,7 +1,6 @@
 window.siteContent = {
-  pageTitle: "Your Name | Academic Homepage",
-  name: "Your Name",
-  role: "Ph.D. Student / Researcher, Your Institution",
+  pageTitle: "Zerun Wang",
+  name: "Zerun Wang ｜ 王泽润 ｜ 王沢潤 ｜ オウ　タクジュン",
   navigation: {
     biography: "Biography",
     news: "News",
@@ -16,25 +15,32 @@ window.siteContent = {
     aspectRatio: 1,
   },
   biography: [
-    "I am a researcher working on <strong>your research area</strong>. My interests include machine learning, artificial intelligence, and interdisciplinary scientific problems.",
-    "Here you can write a short biography introducing your current position, advisor, research focus, and the broader questions that motivate your work. Two or three concise paragraphs are usually enough for a clean academic homepage.",
+    "I am a postdoctoral researcher in <a href=\"https://www.cvm.t.u-tokyo.ac.jp/en/\">Yamasaki Lab</a>, the University of Tokyo.",
+    "I received my Ph.D. from the University of Tokyo in 2025 under the supervision of <a href=\"https://scholar.google.com/citations?user=rE9iY5MAAAAJ&hl=ja\">Prof. Toshihiko Yamasaki</a>. Prior to that, I received my Master’s and Bachelor’s degrees from Tsinghua University under the supervision of <a href=\"https://scholar.google.com/citations?user=6cYECZAAAAAJ&hl=en\">Prof. Guiguang Ding</a>.",
+    "My research focuses on obtaining higher-quality and lower-cost training data for AI models. Specifically, I work on (1) generating valuable synthetic data using generative models and (2) harnessing noisy, unlabeled real-world data. Previously, I worked on developing models for various computer vision tasks, including object detection, lane detection, and image deblurring, etc. I also have hands-on experience in neural network pruning, knowledge distillation, and model deployment.",
+    "Beyond research, I enjoy playing and designing games. I hold a Bachelor's degree in Art from the Academy of Arts and Design, Tsinghua University. I previously worked as a game designer at Tencent Games, contributing to Honor of Kings (王者荣耀), one of the most popular mobile games in China. My current favorite game series is Death Stranding.",
+    "In my free time, I enjoy hiking. So far, I have completed <strong>16/100</strong> 日本百名山, and I look forward to exploring more in the future."
   ],
   links: [
     {
       label: "Email",
       href: "mailto:your.email@example.com",
+      icon: "email",
     },
     {
       label: "GitHub",
       href: "https://github.com/your-github",
+      icon: "github",
     },
     {
       label: "Google Scholar",
       href: "https://scholar.google.com/",
+      icon: "scholar",
     },
     {
       label: "LinkedIn",
       href: "https://www.linkedin.com/",
+      icon: "linkedin",
     },
   ],
   news: [
