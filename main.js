@@ -192,7 +192,6 @@ if (siteContent) {
   setText("nav-publications", siteContent.navigation.publications);
   setText("news-label", siteContent.sections.newsLabel);
   setText("publications-label", siteContent.sections.publicationsLabel);
-  setText("visitor-map-label", siteContent.visitorMap?.label || "Visitor Map");
   setText("footer-name", siteContent.footerName || siteContent.name);
 
   const portraitImage = document.getElementById("portrait-image");
