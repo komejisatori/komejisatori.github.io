@@ -1,6 +1,7 @@
 window.siteContent = {
   pageTitle: "Zerun Wang",
   name: "Zerun Wang ｜ 王泽润 ｜ 王沢潤 ｜ オウ　タクジュン",
+  footerName: "Zerun Wang",
   navigation: {
     biography: "Biography",
     news: "News",
@@ -24,54 +25,86 @@ window.siteContent = {
   links: [
     {
       label: "Email",
-      href: "mailto:your.email@example.com",
+      href: "mailto:wangzrthu [at] gmail.com",
       icon: "email",
     },
     {
       label: "GitHub",
-      href: "https://github.com/your-github",
+      href: "https://github.com/komejisatori",
       icon: "github",
     },
     {
       label: "Google Scholar",
-      href: "https://scholar.google.com/",
+      href: "https://scholar.google.com/citations?user=Bw3je_8AAAAJ&hl=zh-CN",
       icon: "scholar",
     },
     {
       label: "LinkedIn",
-      href: "https://www.linkedin.com/",
+      href: "https://www.linkedin.com/in/zerun-wang-829224165",
       icon: "linkedin",
     },
   ],
   news: [
     {
       date: "2026.03",
-      text: "Add your latest update here, such as a new paper, talk, award, internship, or project release.",
+      text: "Our paper, <a href=\"https://arxiv.org/abs/2601.14671\">Mirai: Autoregressive Visual Generation Needs Foresight</a>, is accpeted by CVPR 2026! \nThis work is first-authored by Yonghao.",
     },
     {
-      date: "2026.02",
-      text: "Add another short news item here. Keeping each update to one sentence helps the page stay clean and readable.",
+      date: "2025.11",
+      text: "One paper, <a href=\"https://ojs.aaai.org/index.php/AAAI/article/view/38007\">Difficulty Controlled Diffusion Model for Synthesizing Effective Training Data</a>, is accpeted by AAAI 2026! This work was done during my internship at CyberAgent AI Lab.",
     },
     {
-      date: "2025.12",
-      text: "You can later expand this into a fuller news archive if you want.",
+      date: "2025.10",
+      text: "I start to work as a postdoctoral researcher in Yamasaki Lab.",
+    },
+    {
+      date: "2025.09",
+      text: "I got my Ph.D. degree from the University of Tokyo.",
     },
   ],
   publications: [
     {
-      title: "Paper Title Goes Here",
-      authors: "Your Name, Coauthor A, Coauthor B",
-      venue: "Conference or Journal Name, 2026",
+      title: "Difficulty Controlled Diffusion Model for Synthesizing Effective Training Data",
+      authors: "<strong>Zerun Wang</strong>, Jiafeng Mao, Xueting Wang, Toshihiko Yamasaki",
+      venue: "AAAI 2026",
+      links: [
+        {
+          label: "pdf",
+          href: "https://arxiv.org/pdf/2411.18109",
+        }
+      ],
+      thumbnailSrc: "paper_thumbnails/aaai26.png",
+      thumbnailAlt: "Thumbnail for Difficulty Controlled Diffusion Model for Synthesizing Effective Training Data",
     },
     {
-      title: "Another Representative Paper",
-      authors: "Your Name, Coauthor C",
-      venue: "Conference or Journal Name, 2025",
+      title: "Mirai: Autoregressive Visual Generation Needs Foresight",
+      authors: "Yonghao Yu, Lang Huang, <strong>Zerun Wang</strong>, Runyi Li, Toshihiko Yamasaki",
+      venue: "CVPR 2026",
+      links: [
+        {
+          label: "pdf",
+          href: "https://arxiv.org/pdf/2601.14671",
+        },
+        {
+          label: "project",
+          href: "https://y0uroy.github.io/Mirai/",
+        },
+      ],
+      thumbnailSrc: "paper_thumbnails/cvpr26.gif",
+      thumbnailAlt: "Thumbnail for Another Representative Paper",
     },
     {
-      title: "Earlier Work",
-      authors: "Your Name, Coauthor D, Coauthor E",
-      venue: "Workshop / ArXiv / Journal Name, 2024",
+      title: "Scomatch: Alleviating overtrusting in open-set semi-supervised learning",
+      authors: "<strong>Zerun Wang</strong>, Liuyu Xiang, Lang Huang, Jiafeng Mao, Ling Xiao, Toshihiko Yamasaki",
+      venue: "ECCV 2024",
+      links: [
+        {
+          label: "pdf",
+          href: "https://arxiv.org/pdf/2409.17512",
+        },
+      ],
+      thumbnailSrc: "paper_thumbnails/eccv24.png",
+      thumbnailAlt: "Thumbnail for Earlier Work",
     },
   ],
 };

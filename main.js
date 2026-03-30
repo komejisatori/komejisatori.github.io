@@ -43,7 +43,7 @@ const renderLinks = (links = []) => {
 
   links.forEach((link) => {
     const node = document.createElement("a");
-    node.className = "social-link";
+    node.className = `social-link social-link--${link.icon}`;
     node.href = link.href;
     node.innerHTML = getLinkIcon(link.icon);
     node.setAttribute("aria-label", link.label);
@@ -67,7 +67,7 @@ const renderNews = (items = []) => {
     date.textContent = item.date;
 
     const text = document.createElement("p");
-    text.textContent = item.text;
+    text.innerHTML = item.text;
 
     article.appendChild(date);
     article.appendChild(text);
@@ -85,21 +85,59 @@ const renderPublications = (items = []) => {
     const article = document.createElement("article");
     article.className = "publication-item";
 
+    const body = document.createElement("div");
+    body.className = "publication-body";
+
+    const copy = document.createElement("div");
+    copy.className = "publication-copy";
+
+    const header = document.createElement("div");
+    header.className = "publication-header";
+
     const title = document.createElement("h3");
     title.className = "publication-title";
     title.textContent = item.title;
 
+    header.appendChild(title);
+
+    if (Array.isArray(item.links) && item.links.length > 0) {
+      const linkGroup = document.createElement("div");
+      linkGroup.className = "publication-links";
+
+      item.links.forEach((link) => {
+        const node = document.createElement("a");
+        node.className = "publication-link";
+        node.href = link.href;
+        node.textContent = `[${link.label}]`;
+        node.setAttribute("aria-label", `${item.title} ${link.label}`);
+        linkGroup.appendChild(node);
+      });
+
+      header.appendChild(linkGroup);
+    }
+
     const authors = document.createElement("p");
     authors.className = "publication-meta";
-    authors.textContent = item.authors;
+    authors.innerHTML = item.authors;
 
     const venue = document.createElement("p");
     venue.className = "publication-meta";
     venue.textContent = item.venue;
 
-    article.appendChild(title);
-    article.appendChild(authors);
-    article.appendChild(venue);
+    copy.appendChild(header);
+    copy.appendChild(authors);
+    copy.appendChild(venue);
+    body.appendChild(copy);
+
+    if (item.thumbnailSrc) {
+      const thumb = document.createElement("img");
+      thumb.className = "publication-thumbnail";
+      thumb.src = item.thumbnailSrc;
+      thumb.alt = item.thumbnailAlt || `${item.title} thumbnail`;
+      body.appendChild(thumb);
+    }
+
+    article.appendChild(body);
     container.appendChild(article);
   });
 };
@@ -130,7 +168,7 @@ if (siteContent) {
   setText("nav-news", siteContent.navigation.news);
   setText("news-label", siteContent.sections.newsLabel);
   setText("publications-label", siteContent.sections.publicationsLabel);
-  setText("footer-name", siteContent.name);
+  setText("footer-name", siteContent.footerName || siteContent.name);
 
   const portraitImage = document.getElementById("portrait-image");
   if (portraitImage) {
