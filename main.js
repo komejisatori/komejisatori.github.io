@@ -12,7 +12,7 @@ const injectVisitorMap = (visitorMap) => {
     return;
   }
 
-  if (document.querySelector('script[data-visitor-map="clustrmaps"]')) {
+  if (document.getElementById("mapmyvisitors")) {
     return;
   }
 
@@ -23,9 +23,10 @@ const injectVisitorMap = (visitorMap) => {
   section.hidden = false;
 
   const script = document.createElement("script");
+  script.type = "text/javascript";
+  script.id = "mapmyvisitors";
   script.defer = true;
   script.src = visitorMap.scriptSrc;
-  script.dataset.visitorMap = "clustrmaps";
   embed.appendChild(script);
 };
 
