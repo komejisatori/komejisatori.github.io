@@ -207,6 +207,10 @@ h2 {
   padding-top: 40px;
 }
 
+.visitor-map-section {
+  padding-top: 40px;
+}
+
 .section-heading {
   margin-bottom: 24px;
 }
@@ -299,6 +303,10 @@ h2 {
   border: 1px solid var(--line);
   border-radius: 8px;
   display: block;
+}
+
+.visitor-map-embed {
+  min-height: 220px;
 }
 
 .footer {

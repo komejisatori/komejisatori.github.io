@@ -7,6 +7,28 @@ const setText = (id, value) => {
   }
 };
 
+const injectVisitorMap = (visitorMap) => {
+  if (!visitorMap || !visitorMap.scriptSrc) {
+    return;
+  }
+
+  if (document.querySelector('script[data-visitor-map="clustrmaps"]')) {
+    return;
+  }
+
+  const section = document.getElementById("visitor-map");
+  const embed = document.getElementById("visitor-map-embed");
+  if (!section || !embed) return;
+
+  section.hidden = false;
+
+  const script = document.createElement("script");
+  script.defer = true;
+  script.src = visitorMap.scriptSrc;
+  script.dataset.visitorMap = "clustrmaps";
+  embed.appendChild(script);
+};
+
 const renderBio = (paragraphs = []) => {
   const container = document.getElementById("bio-text");
   if (!container) return;
@@ -162,12 +184,14 @@ const syncPortraitWidth = () => {
 
 if (siteContent) {
   document.title = siteContent.pageTitle;
+  injectVisitorMap(siteContent.visitorMap);
 
   setText("site-brand", siteContent.name);
   setText("nav-news", siteContent.navigation.news);
   setText("nav-publications", siteContent.navigation.publications);
   setText("news-label", siteContent.sections.newsLabel);
   setText("publications-label", siteContent.sections.publicationsLabel);
+  setText("visitor-map-label", siteContent.visitorMap?.label || "Visitor Map");
   setText("footer-name", siteContent.footerName || siteContent.name);
 
   const portraitImage = document.getElementById("portrait-image");

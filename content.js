@@ -2,6 +2,10 @@ window.siteContent = {
   pageTitle: "Zerun Wang",
   name: "Zerun Wang ｜ 王泽润 ｜ 王沢潤 ｜ オウ　タクジュン",
   footerName: "Zerun Wang",
+  visitorMap: {
+    label: "Visitor Map",
+    scriptSrc: "https://mapmyvisitors.com/map.js?d=-9R_SDDtyyNIbGeDruDW3qs4AI0MqZ6X_qpmYjoB8O0&cl=ffffff&w=a",
+  },
   navigation: {
     news: "News",
     publications: "Publications",
