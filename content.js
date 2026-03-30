@@ -35,7 +35,7 @@ window.siteContent = {
     },
     {
       label: "Google Scholar",
-      href: "https://scholar.google.com/citations?user=Bw3je_8AAAAJ&hl=zh-CN",
+      href: "https://scholar.google.com/citations?user=T-AKdhYAAAAJ",
       icon: "scholar",
     },
     {
