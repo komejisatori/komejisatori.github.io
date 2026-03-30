@@ -3,8 +3,8 @@ window.siteContent = {
   name: "Zerun Wang ｜ 王泽润 ｜ 王沢潤 ｜ オウ　タクジュン",
   footerName: "Zerun Wang",
   navigation: {
-    biography: "Biography",
     news: "News",
+    publications: "Publications",
   },
   sections: {
     newsLabel: "Recent News",

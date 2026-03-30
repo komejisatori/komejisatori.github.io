@@ -164,8 +164,8 @@ if (siteContent) {
   document.title = siteContent.pageTitle;
 
   setText("site-brand", siteContent.name);
-  setText("nav-biography", siteContent.navigation.biography);
   setText("nav-news", siteContent.navigation.news);
+  setText("nav-publications", siteContent.navigation.publications);
   setText("news-label", siteContent.sections.newsLabel);
   setText("publications-label", siteContent.sections.publicationsLabel);
   setText("footer-name", siteContent.footerName || siteContent.name);
