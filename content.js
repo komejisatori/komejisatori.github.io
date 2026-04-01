@@ -20,7 +20,7 @@ window.siteContent = {
     aspectRatio: 1,
   },
   biography: [
-    "I am a postdoctoral researcher in <a href=\"https://www.cvm.t.u-tokyo.ac.jp/en/\">Yamasaki Lab</a>, the University of Tokyo.",
+    "I am a Data Scientist in <a href=\"https://www.lycorp.co.jp/ja/\">LY Corp.</a>, Tokyo, Japan.",
     "I received my Ph.D. from the University of Tokyo in 2025 under the supervision of <a href=\"https://scholar.google.com/citations?user=rE9iY5MAAAAJ&hl=ja\">Prof. Toshihiko Yamasaki</a>. Prior to that, I received my Master’s and Bachelor’s degrees from Tsinghua University under the supervision of <a href=\"https://scholar.google.com/citations?user=6cYECZAAAAAJ&hl=en\">Prof. Guiguang Ding</a>.",
     "My research focuses on obtaining higher-quality and lower-cost training data for AI models. Specifically, I work on (1) generating valuable synthetic data using generative models and (2) harnessing noisy, unlabeled real-world data. Previously, I worked on developing models for various computer vision tasks, including object detection, lane detection, and image deblurring, etc. I also have hands-on experience in neural network pruning, knowledge distillation, and model deployment.",
     "Beyond research, I enjoy playing and designing games. I hold a Bachelor's degree in Art from the Academy of Arts and Design, Tsinghua University. I previously worked as a game designer at Tencent Games, contributing to Honor of Kings (王者荣耀), one of the most popular mobile games in China. My current favorite game series is Death Stranding.",
@@ -50,6 +50,10 @@ window.siteContent = {
   ],
   news: [
     {
+      date: "2026.04",
+      text: "I joined LY Corp. as a Data Scientist.",
+    },
+    {
       date: "2026.03",
       text: "Our paper, <a href=\"https://arxiv.org/abs/2601.14671\">Mirai: Autoregressive Visual Generation Needs Foresight</a>, is accpeted by CVPR 2026! \nThis work is first-authored by Yonghao.",
     },
@@ -59,7 +63,7 @@ window.siteContent = {
     },
     {
       date: "2025.10",
-      text: "I start to work as a postdoctoral researcher in Yamasaki Lab.",
+      text: "I start to work as a postdoctoral researcher in <a href=\"https://www.cvm.t.u-tokyo.ac.jp/en/\">Yamasaki Lab</a>.",
     },
     {
       date: "2025.09",
